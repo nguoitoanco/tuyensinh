@@ -7,12 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<h3>Welcome to JournalDEV Tutorials</h3>
+<h3>Welcome to Home Page</h3>
 <ul>
-    <li>Java 8 tutorial</li>
-    <li>Spring tutorial</li>
-    <li>Gradle tutorial</li>
-    <li>BigData tutorial</li>
+    <li><a href="${pageContext.request.contextPath}/loginPage">Login</a></li>
+    <li><a href="${pageContext.request.contextPath}/downloadPage">Download CV Template</a></li>
+    <li><a href="${pageContext.request.contextPath}/uploadPage">Upload CV</a></li>
 </ul>
 
 <c:url value="/logout" var="logoutUrl" />
