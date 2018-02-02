@@ -7,7 +7,7 @@ import javax.servlet.ServletRegistration;
 import java.io.File;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-    private int maxUploadSizeInMb = 5 * 1024 * 1024; // 5 MB
+    private static final int MAX_UPLOAD_SIZE_MB = 5 * 1024 * 1024; // 5 MB
 
     @Override
     protected String[] getServletMappings() {
@@ -33,7 +33,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         // register a MultipartConfigElement
         MultipartConfigElement multipartConfigElement =
                 new MultipartConfigElement(uploadDirectory.getAbsolutePath(),
-                        maxUploadSizeInMb, maxUploadSizeInMb * 2, maxUploadSizeInMb / 2);
+                        MAX_UPLOAD_SIZE_MB, MAX_UPLOAD_SIZE_MB * 2, MAX_UPLOAD_SIZE_MB / 2);
 
         registration.setMultipartConfig(multipartConfigElement);
 

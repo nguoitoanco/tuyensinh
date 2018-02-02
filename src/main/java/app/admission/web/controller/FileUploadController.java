@@ -17,7 +17,7 @@ import java.util.StringJoiner;
 @Controller
 public class FileUploadController {
     //Save the uploaded file to this folder
-    private static String UPLOADED_FOLDER = "E:\\temp\\";
+    private static final String UPLOADED_FOLDER = "E:\\temp\\";
 
     @RequestMapping(value = {"/uploadFiles"}, method = RequestMethod.POST)
     public String uploadFiles(@RequestParam("files") MultipartFile[] files, RedirectAttributes redirectAttributes) {
